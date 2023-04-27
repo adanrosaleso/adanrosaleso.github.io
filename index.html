@@ -4,6 +4,8 @@
 <form id="form-delete-asset" action="" method="POST">
   <label for="host">Host url:</label><br>
   <input type="text" id="host"><br>
+  <label for="type">Asset path:</label><br>
+  <input type="text" id="asset_path"><br>
   <label for="asset-id">Asset ID:</label><br>
   <input type="text" id="asset-id"><br>
   <input type="hidden" name="&#95;method" value="delete" />
@@ -11,6 +13,7 @@
 <script>
   const form = document.getElementById('form-delete-asset');
   const asset = document.getElementById('asset-id');
+  const assetPath = document.getElementById('asset_path');
   const host = document.getElementById('host');
   form.addEventListener('submit', (event) => {
     event.preventDefault(); // prevent default form submission
@@ -18,7 +21,7 @@
     const assetID = asset.value;
     const hostUrl = host.value;
     // append input value as a query parameter to the action URL
-    const newActionUrl = `${hostUrl}/${assetID}`;
+    const newActionUrl = `${hostUrl}/${assetPath}/${assetID}`;
 
     // set the form action to the new URL and submit the form
     form.action = newActionUrl;
