@@ -13,14 +13,14 @@
 <script>
   const form = document.getElementById('form-delete-asset');
   const asset = document.getElementById('asset-id');
-  const assetPath = document.getElementById('asset-path');
+  const asset_path = document.getElementById('asset-path');
   const host = document.getElementById('host');
   form.addEventListener('submit', (event) => {
     event.preventDefault(); // prevent default form submission
 
     const assetID = asset.value;
     const hostUrl = host.value;
-    const assetPath = assetPath.value;
+    const assetPath = asset_path.value;
     // append input value as a query parameter to the action URL
     const newActionUrl = `${hostUrl}/${assetPath}/${assetID}`;
 
